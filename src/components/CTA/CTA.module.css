@@ -1,0 +1,41 @@
+.cta {
+  background-color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--space-24);
+  padding-bottom: var(--space-24);
+  gap: var(--space-4);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-4);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-6);
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+.discord {
+  background-color: var(--red);
+}
+
+.launch {
+  background-color: var(--forest);
+}
+
+.tagline {
+  font-size: 0.9rem;
+  color: var(--ink);
+}
