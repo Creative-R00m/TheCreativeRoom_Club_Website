@@ -1,5 +1,5 @@
 :root {
-  /* Palette for The Creative Room */
+  /* palette for The Creative Room */
   --cream: #f2ede4;
   --ink: #141412;
   --cobalt: #2d35a0;
@@ -7,7 +7,7 @@
   --red: #d04035;
   --forest: #4a7a58;
 
-  /* Custom fonts */
+  /* custom fonts */
   --font-display: "Asta", serif;
   --font-body: "Copse", serif;
 
