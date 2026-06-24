@@ -1,18 +1,139 @@
 .about {
   background-color: var(--ink);
   color: white;
-  padding-top: var(--space-24);
-  padding-bottom: var(--space-24);
+  padding-top: 300px;
+  padding-bottom: 300px;
+  position: relative;
 }
 
-.columns {
+.row {
   display: flex;
   flex-direction: row;
-  gap: var(--space-6);
-  max-width: 900px;
-  margin: 0 auto;
+  gap: var(--space-8);
+  /* max-width: 900px; */
+  margin: 0 120px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  gap: 2.5rem;
+  margin: 0;
+  position: relative;
+}
+
+h2 {
+  font-family: var(--font-body);
+  font-size: var(--space-4);
+  margin: 0;
+}
+
+p {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .column {
   text-align: center;
+}
+
+.tornPapertop,
+.tornPaperbottom,
+.aboutQuestion,
+.aboutPurpose,
+.aboutHeart,
+.tapeTop,
+.tapeBottom {
+  position: absolute;
+}
+
+.tapeTop {
+  top: -90px;
+  right: -120px;
+  width: 230px;
+  z-index: 5;
+}
+
+.tapeBottom {
+  bottom: -110px;
+  left: -30px;
+  width: 240px;
+  z-index: 5;
+}
+
+.aboutQuestion {
+  width: 125px;
+  top: 60px;
+  left: 20px;
+}
+
+.aboutPurpose {
+  top: 40px;
+  align-self: center;
+  max-height: 24px;
+}
+
+.aboutHeart {
+  width: 210px;
+  bottom: 120px;
+  right: 10px;
+}
+
+.tornPapertop {
+  top: -38px;
+  width: 100%;
+  min-height: 70px;
+  z-index: 5;
+}
+
+.tornPaperbottom {
+  bottom: -38px;
+  width: 100%;
+  min-height: 70px;
+  z-index: 5;
+}
+
+.paper {
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 770px) {
+  .about {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: var(--space-12);
+    margin: 0 32px;
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .column {
+    gap: var(--space-3);
+  }
+
+  .aboutQuestion {
+    width: 100px;
+    top: 60px;
+    left: 10px;
+  }
+
+  .aboutHeart {
+    width: 180px;
+    bottom: 260px;
+    right: -30px;
+  }
 }

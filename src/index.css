@@ -8,7 +8,7 @@
   --forest: #4a7a58;
 
   /* custom fonts */
-  --font-display: "Asta", serif;
+  --font-display: "Asta Sans", serif;
   --font-body: "Copse", serif;
 
   /* base-8 spacing scale */
@@ -47,7 +47,7 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 
 a {
