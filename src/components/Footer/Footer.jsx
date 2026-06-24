@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <img
-        className={styles.footerUnderline}
+        className={`${styles.footerUnderline} sketch-img`}
         src="/temp_landing/footer_underline.png"
       />
       {/* <a href='#' target='_blank' rel='noreferrer'>

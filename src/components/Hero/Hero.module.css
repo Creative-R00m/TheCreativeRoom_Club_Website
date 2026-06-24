@@ -66,6 +66,7 @@
   z-index: -1;
   height: 100%;
   width: 100%;
+  min-width: 1440px;
   top: 0px;
   bottom: 0px;
   mix-blend-mode: multiply;
@@ -104,7 +105,7 @@
   .hero_sparkle {
     bottom: 140px;
     right: -80px;
-    transform: rotate(-15deg);
+    transform: rotate(120deg);
     width: 220px;
   }
 }

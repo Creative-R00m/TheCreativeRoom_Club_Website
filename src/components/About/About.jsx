@@ -4,24 +4,24 @@ export default function About() {
   return (
     <section className={styles.about}>
       <img
-        className={styles.paper}
+        className={`${styles.paper}`}
         src="/temp_landing/white-paper-texture.jpg"
       />
       <img
-        className={styles.tornPapertop}
+        className={`${styles.tornPapertop}`}
         src="/temp_landing/torn_paper_top.png"
       />
       <img
-        className={styles.tornPaperbottom}
+        className={`${styles.tornPaperbottom}`}
         src="/temp_landing/torn_paper_bottom.png"
       />
       <img
-        className={styles.aboutQuestion}
+        className={`${styles.aboutQuestion} sketch-img`}
         src="/temp_landing/exclamation_question.png"
       />
-      <img className={styles.aboutHeart} src="/temp_landing/Heart.png" />
-      <img className={styles.tapeTop} src="/temp_landing/top_tape.png" />
-      <img className={styles.tapeBottom} src="/temp_landing/bottom_tape.png" />
+      <img className={`${styles.aboutHeart} sketch-img`} src="/temp_landing/Heart.png" />
+      <img className={`${styles.tapeTop}`} src="/temp_landing/top_tape.png" />
+      <img className={`${styles.tapeBottom}`} src="/temp_landing/bottom_tape.png" />
       <div className={styles.row}>
         <div className={styles.column}>
           <h2>Who We Are</h2>
@@ -34,7 +34,7 @@ export default function About() {
         <div className={styles.column}>
           <h2>Our Purpose</h2>
           <img
-            className={styles.aboutPurpose}
+            className={`${styles.aboutPurpose} sketch-img`}
             src="/temp_landing/purpose_underline.png"
           />
           <p>
