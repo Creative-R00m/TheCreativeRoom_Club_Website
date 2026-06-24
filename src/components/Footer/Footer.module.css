@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-4) var(--space-8);
+  font-size: 0.75rem;
+  color: var(--ink);
+  background-color: var(--cream);
+}
+
+.footer a {
+  cursor: pointer;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
