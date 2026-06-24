@@ -4,9 +4,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: var(--space-24);
-  padding-bottom: var(--space-24);
+  padding-top: 300px;
+  padding-bottom: 280px;
   gap: var(--space-4);
+  position: relative;
+  overflow: hidden;
 }
 
 .buttons {
@@ -20,12 +22,17 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-6);
-  border-radius: 100px;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: white;
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  z-index: 1;
+}
+
+.button a {
+  margin: 0px;
 }
 
 .button:hover {
@@ -34,14 +41,80 @@
 }
 
 .discord {
-  background-color: var(--red);
+  background-color: var(--cobalt);
+  color: var(--cream);
 }
 
 .launch {
-  background-color: var(--forest);
+  background-color: var(--gold);
+  color: var(--ink);
+}
+
+.link-button {
+  width: 24px;
 }
 
 .tagline {
   font-size: 0.9rem;
   color: var(--ink);
+}
+
+.arrowTop,
+.scribble, .footerUnderline {
+  position: absolute;
+}
+
+.arrowTop {
+  top: -60px;
+  right: -80px;
+  width: 380px;
+}
+
+.scribble {
+  width: 200px;
+  bottom: 10px;
+  left: -120px;
+}
+
+.footerUnderline {
+  width: 530px;
+  bottom: -40px;
+}
+
+.paper {
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  mix-blend-mode: multiply;
+  opacity: 40%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-4) var(--space-8);
+  font-size: 0.75rem;
+  color: var(--ink);
+  position: absolute;
+  bottom: 0;
+}
+
+.footer a {
+  cursor: pointer;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 770px) {
+  .buttons {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
 }

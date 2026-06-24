@@ -3,18 +3,23 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  padding-bottom: var(--space-8);
+  padding-bottom: var(--space-12);
   padding-top: var(--space-8);
+  position: relative;
+  overflow: hidden;
 }
 
-.hero img {
-  width: 300px;
+.logo {
+  width: 450px;
   height: auto;
 }
 
 .hero p {
   margin-top: auto;
   text-align: center;
+  padding: 0 120px;
+  font-family: var(--font-body);
+  font-size: 1rem;
 }
 
 .logoWrapper {
@@ -22,4 +27,84 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero_eye,
+.hero_line,
+.hero_scribble,
+.hero_sparkle {
+  position: absolute;
+}
+
+.hero_eye {
+  top: -88px;
+  left: -30px;
+  width: 350px;
+}
+
+.hero_line {
+  top: -30px;
+  right: -72px;
+  width: 310px;
+}
+
+.hero_scribble {
+  bottom: -100px;
+  left: -60px;
+  width: 250px;
+}
+
+.hero_sparkle {
+  bottom: 100px;
+  right: -80px;
+  transform: rotate(-15deg);
+  width: 250px;
+}
+
+.paper {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  mix-blend-mode: multiply;
+  opacity: 40%;
+}
+
+@media (max-width: 450px) {
+  .logo {
+    width: 290px;
+    height: auto;
+  }
+
+  .hero p {
+    padding: 0 24px;
+    font-size: .9rem;
+  }
+
+  .hero_eye {
+    top: -50px;
+    left: -70px;
+    width: 210px;
+  }
+
+  .hero_line {
+    top: -50px;
+    right: -100px;
+    width: 280px;
+  }
+
+  .hero_scribble {
+    bottom: -80px;
+    left: -90px;
+    width: 200px;
+  }
+
+  .hero_sparkle {
+    bottom: 140px;
+    right: -80px;
+    transform: rotate(-15deg);
+    width: 220px;
+  }
 }

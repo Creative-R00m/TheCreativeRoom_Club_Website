@@ -9,7 +9,6 @@ export default function App() {
       <Hero />
       <About />
       <CTA />
-      <Footer />
     </>
   );
 }
