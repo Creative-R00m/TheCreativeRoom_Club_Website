@@ -21,9 +21,7 @@
 
 .footerUnderline {
   position: absolute;
-}
-
-.footerUnderline {
   width: 530px;
   bottom: -40px;
+  pointer-events: none;
 }
