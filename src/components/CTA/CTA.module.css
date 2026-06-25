@@ -60,7 +60,8 @@
 }
 
 .arrowTop,
-.scribble, .footerUnderline {
+.scribble,
+.footerUnderline {
   position: absolute;
 }
 
