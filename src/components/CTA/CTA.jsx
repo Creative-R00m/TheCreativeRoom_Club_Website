@@ -17,7 +17,7 @@ export default function CTA() {
         src="/temp_landing/footer_underline.png"
       />
       <div className={styles.buttons}>
-        <a href="#" className={`${styles.button} ${styles.discord}`}>
+        <a href="https://discord.gg/8knfryy6wC" className={`${styles.button} ${styles.discord}`}>
           {/* <FaDiscord /> */}
           <img
             className={`${styles["link-button"]}`}
@@ -25,17 +25,17 @@ export default function CTA() {
           />
           Join us on Discord
         </a>
-        <a href='#' className={`${styles.button} ${styles.launch}`}>
+        {/* <a href='#' className={`${styles.button} ${styles.launch}`}>
           <img className={`${styles['link-button']}`} src="/temp_landing/luma_icon.svg" />
           Soft Launch Opening
-        </a>
+        </a> */}
       </div>
       <p className={styles.tagline}>
         Be a part of something bigger than each one of us...
       </p>
       <div className={styles.footer}>
         <span>© 2026 The Creative Room</span>
-        <a href="#" target="_blank" rel="noreferrer">
+        <a href="https://www.instagram.com/thecreativeroom.damd" target="_blank" rel="noreferrer">
           Instagram
         </a>
       </div>

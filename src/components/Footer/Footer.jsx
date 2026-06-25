@@ -11,7 +11,7 @@ export default function Footer() {
         BCIT DAMD
       </a> */}
       <span>© 2026 The Creative Room</span>
-      <a href="#" target="_blank" rel="noreferrer">
+      <a href="https://www.instagram.com/thecreativeroom.damd?igsh=emM4azk1bTZvYWdo" target="_blank" rel="noreferrer">
         Instagram
       </a>
     </footer>
