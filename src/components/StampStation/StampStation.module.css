@@ -1,0 +1,202 @@
+/* =================================================================
+   STAMP TOOL
+   - ported from the Landingpage prototype's global stylesheet.
+   - this project doesn't define --ease / --ink-soft / --paper, so those
+     are inlined here; --red / --cream come from the global palette.
+   ================================================================= */
+
+.stampCluster {
+  position: fixed;
+  top: clamp(1rem, 2.4vh, 1.7rem);
+  right: clamp(1.1rem, 4vw, 3rem);
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.stampTool {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* clear-all button — only present while marks exist */
+.stampClear {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  color: #44413b;
+  background: var(--cream);
+  border: 1.5px solid rgba(22, 22, 22, 0.22);
+  border-radius: 50%;
+  cursor: pointer;
+  animation: clear-in 0.24s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: color 0.2s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.2s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background-color 0.2s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.stampClear svg {
+  display: block;
+}
+@media (hover: hover) {
+  .stampClear:hover {
+    color: var(--red);
+    border-color: var(--red);
+    background: rgba(224, 72, 58, 0.08);
+    transform: rotate(-6deg);
+  }
+}
+@keyframes clear-in {
+  from {
+    opacity: 0;
+    transform: scale(0.6) translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.stampTool img {
+  width: 2rem;
+  height: auto;
+  transform: rotate(8deg);
+  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .stampTool:hover {
+    background: rgba(224, 72, 58, 0.12);
+  }
+  .stampTool:hover img {
+    transform: rotate(-4deg) scale(1.08);
+  }
+}
+.stampTool.isActive {
+  background: rgba(224, 72, 58, 0.18);
+  box-shadow: 0 0 0 2px var(--red);
+}
+.stampTool.isActive img {
+  transform: rotate(-6deg) scale(1.05);
+}
+.stampTool:active img {
+  transform: rotate(-6deg) scale(0.86);
+}
+
+/* full-screen catcher while stamping — hide the OS cursor; the floating
+   stamp below stands in for it so we can animate the press. */
+.stampOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 65;
+  cursor: none;
+  /* don't let the browser steal a touch-drag for scrolling — keeps the
+     press alive so pointerup fires (and the stamp lands) instead of cancel */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none; /* no iOS long-press callout while stamping */
+}
+
+/* the floating stamp that follows the pointer in stamp mode */
+.stampPointer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 66;
+  pointer-events: none;
+  will-change: transform;
+}
+.stampPointerInner {
+  position: relative;
+  display: inline-block;
+  /* anchor the stamp's bottom-centre on the pointer */
+  transform: translate(-50%, -86%);
+  transform-origin: 50% 100%;
+}
+.stampPointer img {
+  width: 2.1rem;
+  height: auto;
+  filter: drop-shadow(0 3px 4px rgba(22, 22, 22, 0.25));
+}
+/* three stamping frames cross-fade: rest → tilt → pressed */
+.stampFrame {
+  transition: opacity 0.07s linear;
+}
+.stampFrame2,
+.stampFrame3 {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.stampFrame1 {
+  display: block;
+  opacity: 1;
+}
+.stampPointer[data-frame="1"] .stampFrame1 {
+  opacity: 0;
+}
+.stampPointer[data-frame="1"] .stampFrame2 {
+  opacity: 1;
+}
+.stampPointer[data-frame="2"] .stampFrame1 {
+  opacity: 0;
+}
+.stampPointer[data-frame="2"] .stampFrame3 {
+  opacity: 1;
+}
+
+/* placed marks */
+.stampLayer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+}
+.stampMark {
+  position: fixed;
+  width: clamp(82px, 9vw, 124px);
+  height: auto;
+  transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+  transform-origin: center;
+  animation: stamp-pop 0.2s cubic-bezier(0.2, 1.1, 0.3, 1);
+  -webkit-user-select: none;
+  user-select: none;
+}
+/* ink press: lands a touch big + faded, snaps to full — reads as a thunk */
+@keyframes stamp-pop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(1.22);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(1);
+  }
+}
+/* fade every mark out together when clearing */
+.stampLayer.isClearing .stampMark {
+  animation: stamp-clear 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+@keyframes stamp-clear {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--r, 0deg)) scale(1);
+  }
+}
