@@ -34,7 +34,7 @@ export default function CTA() {
         Be a part of something bigger...
       </p>
       <div className={styles.footer}>
-        <span>© 2026 The Creative Room</span>
+        <span className={styles.Est}>© 2026 The Creative Room</span>
         <a href="https://www.instagram.com/thecreativeroom.damd" target="_blank" rel="noreferrer">
           Instagram
         </a>

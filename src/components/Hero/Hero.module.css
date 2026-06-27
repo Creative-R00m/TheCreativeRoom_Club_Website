@@ -54,11 +54,22 @@
   width: 250px;
 }
 
+@keyframes sketch-sparkle {
+  0%, 100% {
+    filter: url(#sketch1);
+    transform: translate(0px, 0px) rotate(-15deg);
+  }
+  50% {
+    filter: url(#sketch2);
+    transform: translate(0.4px, 0.6px) rotate(-14.7deg);
+  }
+}
+
 .hero_sparkle {
   bottom: 100px;
   right: -80px;
-  transform: rotate(-15deg);
   width: 250px;
+  animation-name: sketch-sparkle;
 }
 
 .paper {
@@ -103,9 +114,20 @@
   }
 
   .hero_sparkle {
-    bottom: 140px;
-    right: -80px;
-    transform: rotate(120deg);
-    width: 220px;
+    bottom: 120px;
+    right: -90px;
+    width: 200px;
+    animation-name: sketch-sparkle-mobile;
+  }
+
+  @keyframes sketch-sparkle-mobile {
+    0%, 100% {
+      filter: url(#sketch1);
+      transform: translate(0px, 0px) rotate(-20deg);
+    }
+    50% {
+      filter: url(#sketch2);
+      transform: translate(0.4px, 0.6px) rotate(-24deg);
+    }
   }
 }
