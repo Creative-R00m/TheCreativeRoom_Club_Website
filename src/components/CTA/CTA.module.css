@@ -74,8 +74,8 @@
 
 .scribble {
   width: 200px;
-  bottom: 10px;
-  left: -120px;
+  bottom: 100px;
+  right: -120px;
 }
 
 .footerUnderline {
@@ -97,15 +97,19 @@
 
 .footer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-8);
+  justify-content: space-between;
   padding: var(--space-4) var(--space-8);
+  width: 100%;
+  max-width: 400px;
   font-size: 0.75rem;
   color: var(--ink);
   position: absolute;
   bottom: 0;
   z-index: 1;
+}
+
+.Est {
+  display:inline-flex;
 }
 
 .footer a {
