@@ -25,13 +25,13 @@ export default function CTA() {
           />
           Join us on Discord
         </a>
-        {/* <a href='#' className={`${styles.button} ${styles.launch}`}>
+        <a href='https://luma.com/h5us2skt' className={`${styles.button} ${styles.launch}`}>
           <img className={`${styles['link-button']}`} src="/temp_landing/luma_icon.svg" />
           Soft Launch Opening
-        </a> */}
+        </a>
       </div>
       <p className={styles.tagline}>
-        Be a part of something bigger than each one of us...
+        Be a part of something bigger...
       </p>
       <div className={styles.footer}>
         <span>© 2026 The Creative Room</span>
