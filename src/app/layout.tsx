@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Asta_Sans, Copse } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/ui/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontSans = Asta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontHeading = Copse({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang='en' className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang='en' className={`${fontSans.variable} ${fontHeading.variable}`}>
       <body>
         <Navbar />
         {children}
