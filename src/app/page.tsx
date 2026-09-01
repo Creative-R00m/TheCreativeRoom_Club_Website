@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <h1>The Creative Room</h1>
-      <Button variant='default' size='default'>
+      <Button variant='default' size='icon-sm' radius='full'>
         Click Me
       </Button>
     </div>
