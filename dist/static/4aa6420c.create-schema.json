@@ -1,0 +1,1288 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "publishedAt",
+        "type": "datetime"
+      },
+      {
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "of": [
+          {
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "level": "error",
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "of": [],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "type": "block"
+          }
+        ],
+        "name": "body",
+        "type": "array"
+      }
+    ],
+    "name": "post",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "coverImage",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "startDate",
+        "type": "date",
+        "title": "Date"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "12:00 AM",
+              "value": "00:00"
+            },
+            {
+              "title": "12:15 AM",
+              "value": "00:15"
+            },
+            {
+              "title": "12:30 AM",
+              "value": "00:30"
+            },
+            {
+              "title": "12:45 AM",
+              "value": "00:45"
+            },
+            {
+              "title": "1:00 AM",
+              "value": "01:00"
+            },
+            {
+              "title": "1:15 AM",
+              "value": "01:15"
+            },
+            {
+              "title": "1:30 AM",
+              "value": "01:30"
+            },
+            {
+              "title": "1:45 AM",
+              "value": "01:45"
+            },
+            {
+              "title": "2:00 AM",
+              "value": "02:00"
+            },
+            {
+              "title": "2:15 AM",
+              "value": "02:15"
+            },
+            {
+              "title": "2:30 AM",
+              "value": "02:30"
+            },
+            {
+              "title": "2:45 AM",
+              "value": "02:45"
+            },
+            {
+              "title": "3:00 AM",
+              "value": "03:00"
+            },
+            {
+              "title": "3:15 AM",
+              "value": "03:15"
+            },
+            {
+              "title": "3:30 AM",
+              "value": "03:30"
+            },
+            {
+              "title": "3:45 AM",
+              "value": "03:45"
+            },
+            {
+              "title": "4:00 AM",
+              "value": "04:00"
+            },
+            {
+              "title": "4:15 AM",
+              "value": "04:15"
+            },
+            {
+              "title": "4:30 AM",
+              "value": "04:30"
+            },
+            {
+              "title": "4:45 AM",
+              "value": "04:45"
+            },
+            {
+              "title": "5:00 AM",
+              "value": "05:00"
+            },
+            {
+              "title": "5:15 AM",
+              "value": "05:15"
+            },
+            {
+              "title": "5:30 AM",
+              "value": "05:30"
+            },
+            {
+              "title": "5:45 AM",
+              "value": "05:45"
+            },
+            {
+              "title": "6:00 AM",
+              "value": "06:00"
+            },
+            {
+              "title": "6:15 AM",
+              "value": "06:15"
+            },
+            {
+              "title": "6:30 AM",
+              "value": "06:30"
+            },
+            {
+              "title": "6:45 AM",
+              "value": "06:45"
+            },
+            {
+              "title": "7:00 AM",
+              "value": "07:00"
+            },
+            {
+              "title": "7:15 AM",
+              "value": "07:15"
+            },
+            {
+              "title": "7:30 AM",
+              "value": "07:30"
+            },
+            {
+              "title": "7:45 AM",
+              "value": "07:45"
+            },
+            {
+              "title": "8:00 AM",
+              "value": "08:00"
+            },
+            {
+              "title": "8:15 AM",
+              "value": "08:15"
+            },
+            {
+              "title": "8:30 AM",
+              "value": "08:30"
+            },
+            {
+              "title": "8:45 AM",
+              "value": "08:45"
+            },
+            {
+              "title": "9:00 AM",
+              "value": "09:00"
+            },
+            {
+              "title": "9:15 AM",
+              "value": "09:15"
+            },
+            {
+              "title": "9:30 AM",
+              "value": "09:30"
+            },
+            {
+              "title": "9:45 AM",
+              "value": "09:45"
+            },
+            {
+              "title": "10:00 AM",
+              "value": "10:00"
+            },
+            {
+              "title": "10:15 AM",
+              "value": "10:15"
+            },
+            {
+              "title": "10:30 AM",
+              "value": "10:30"
+            },
+            {
+              "title": "10:45 AM",
+              "value": "10:45"
+            },
+            {
+              "title": "11:00 AM",
+              "value": "11:00"
+            },
+            {
+              "title": "11:15 AM",
+              "value": "11:15"
+            },
+            {
+              "title": "11:30 AM",
+              "value": "11:30"
+            },
+            {
+              "title": "11:45 AM",
+              "value": "11:45"
+            },
+            {
+              "title": "12:00 PM",
+              "value": "12:00"
+            },
+            {
+              "title": "12:15 PM",
+              "value": "12:15"
+            },
+            {
+              "title": "12:30 PM",
+              "value": "12:30"
+            },
+            {
+              "title": "12:45 PM",
+              "value": "12:45"
+            },
+            {
+              "title": "1:00 PM",
+              "value": "13:00"
+            },
+            {
+              "title": "1:15 PM",
+              "value": "13:15"
+            },
+            {
+              "title": "1:30 PM",
+              "value": "13:30"
+            },
+            {
+              "title": "1:45 PM",
+              "value": "13:45"
+            },
+            {
+              "title": "2:00 PM",
+              "value": "14:00"
+            },
+            {
+              "title": "2:15 PM",
+              "value": "14:15"
+            },
+            {
+              "title": "2:30 PM",
+              "value": "14:30"
+            },
+            {
+              "title": "2:45 PM",
+              "value": "14:45"
+            },
+            {
+              "title": "3:00 PM",
+              "value": "15:00"
+            },
+            {
+              "title": "3:15 PM",
+              "value": "15:15"
+            },
+            {
+              "title": "3:30 PM",
+              "value": "15:30"
+            },
+            {
+              "title": "3:45 PM",
+              "value": "15:45"
+            },
+            {
+              "title": "4:00 PM",
+              "value": "16:00"
+            },
+            {
+              "title": "4:15 PM",
+              "value": "16:15"
+            },
+            {
+              "title": "4:30 PM",
+              "value": "16:30"
+            },
+            {
+              "title": "4:45 PM",
+              "value": "16:45"
+            },
+            {
+              "title": "5:00 PM",
+              "value": "17:00"
+            },
+            {
+              "title": "5:15 PM",
+              "value": "17:15"
+            },
+            {
+              "title": "5:30 PM",
+              "value": "17:30"
+            },
+            {
+              "title": "5:45 PM",
+              "value": "17:45"
+            },
+            {
+              "title": "6:00 PM",
+              "value": "18:00"
+            },
+            {
+              "title": "6:15 PM",
+              "value": "18:15"
+            },
+            {
+              "title": "6:30 PM",
+              "value": "18:30"
+            },
+            {
+              "title": "6:45 PM",
+              "value": "18:45"
+            },
+            {
+              "title": "7:00 PM",
+              "value": "19:00"
+            },
+            {
+              "title": "7:15 PM",
+              "value": "19:15"
+            },
+            {
+              "title": "7:30 PM",
+              "value": "19:30"
+            },
+            {
+              "title": "7:45 PM",
+              "value": "19:45"
+            },
+            {
+              "title": "8:00 PM",
+              "value": "20:00"
+            },
+            {
+              "title": "8:15 PM",
+              "value": "20:15"
+            },
+            {
+              "title": "8:30 PM",
+              "value": "20:30"
+            },
+            {
+              "title": "8:45 PM",
+              "value": "20:45"
+            },
+            {
+              "title": "9:00 PM",
+              "value": "21:00"
+            },
+            {
+              "title": "9:15 PM",
+              "value": "21:15"
+            },
+            {
+              "title": "9:30 PM",
+              "value": "21:30"
+            },
+            {
+              "title": "9:45 PM",
+              "value": "21:45"
+            },
+            {
+              "title": "10:00 PM",
+              "value": "22:00"
+            },
+            {
+              "title": "10:15 PM",
+              "value": "22:15"
+            },
+            {
+              "title": "10:30 PM",
+              "value": "22:30"
+            },
+            {
+              "title": "10:45 PM",
+              "value": "22:45"
+            },
+            {
+              "title": "11:00 PM",
+              "value": "23:00"
+            },
+            {
+              "title": "11:15 PM",
+              "value": "23:15"
+            },
+            {
+              "title": "11:30 PM",
+              "value": "23:30"
+            },
+            {
+              "title": "11:45 PM",
+              "value": "23:45"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "00:00",
+                  "00:15",
+                  "00:30",
+                  "00:45",
+                  "01:00",
+                  "01:15",
+                  "01:30",
+                  "01:45",
+                  "02:00",
+                  "02:15",
+                  "02:30",
+                  "02:45",
+                  "03:00",
+                  "03:15",
+                  "03:30",
+                  "03:45",
+                  "04:00",
+                  "04:15",
+                  "04:30",
+                  "04:45",
+                  "05:00",
+                  "05:15",
+                  "05:30",
+                  "05:45",
+                  "06:00",
+                  "06:15",
+                  "06:30",
+                  "06:45",
+                  "07:00",
+                  "07:15",
+                  "07:30",
+                  "07:45",
+                  "08:00",
+                  "08:15",
+                  "08:30",
+                  "08:45",
+                  "09:00",
+                  "09:15",
+                  "09:30",
+                  "09:45",
+                  "10:00",
+                  "10:15",
+                  "10:30",
+                  "10:45",
+                  "11:00",
+                  "11:15",
+                  "11:30",
+                  "11:45",
+                  "12:00",
+                  "12:15",
+                  "12:30",
+                  "12:45",
+                  "13:00",
+                  "13:15",
+                  "13:30",
+                  "13:45",
+                  "14:00",
+                  "14:15",
+                  "14:30",
+                  "14:45",
+                  "15:00",
+                  "15:15",
+                  "15:30",
+                  "15:45",
+                  "16:00",
+                  "16:15",
+                  "16:30",
+                  "16:45",
+                  "17:00",
+                  "17:15",
+                  "17:30",
+                  "17:45",
+                  "18:00",
+                  "18:15",
+                  "18:30",
+                  "18:45",
+                  "19:00",
+                  "19:15",
+                  "19:30",
+                  "19:45",
+                  "20:00",
+                  "20:15",
+                  "20:30",
+                  "20:45",
+                  "21:00",
+                  "21:15",
+                  "21:30",
+                  "21:45",
+                  "22:00",
+                  "22:15",
+                  "22:30",
+                  "22:45",
+                  "23:00",
+                  "23:15",
+                  "23:30",
+                  "23:45"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "startTime",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "12:00 AM",
+              "value": "00:00"
+            },
+            {
+              "title": "12:15 AM",
+              "value": "00:15"
+            },
+            {
+              "title": "12:30 AM",
+              "value": "00:30"
+            },
+            {
+              "title": "12:45 AM",
+              "value": "00:45"
+            },
+            {
+              "title": "1:00 AM",
+              "value": "01:00"
+            },
+            {
+              "title": "1:15 AM",
+              "value": "01:15"
+            },
+            {
+              "title": "1:30 AM",
+              "value": "01:30"
+            },
+            {
+              "title": "1:45 AM",
+              "value": "01:45"
+            },
+            {
+              "title": "2:00 AM",
+              "value": "02:00"
+            },
+            {
+              "title": "2:15 AM",
+              "value": "02:15"
+            },
+            {
+              "title": "2:30 AM",
+              "value": "02:30"
+            },
+            {
+              "title": "2:45 AM",
+              "value": "02:45"
+            },
+            {
+              "title": "3:00 AM",
+              "value": "03:00"
+            },
+            {
+              "title": "3:15 AM",
+              "value": "03:15"
+            },
+            {
+              "title": "3:30 AM",
+              "value": "03:30"
+            },
+            {
+              "title": "3:45 AM",
+              "value": "03:45"
+            },
+            {
+              "title": "4:00 AM",
+              "value": "04:00"
+            },
+            {
+              "title": "4:15 AM",
+              "value": "04:15"
+            },
+            {
+              "title": "4:30 AM",
+              "value": "04:30"
+            },
+            {
+              "title": "4:45 AM",
+              "value": "04:45"
+            },
+            {
+              "title": "5:00 AM",
+              "value": "05:00"
+            },
+            {
+              "title": "5:15 AM",
+              "value": "05:15"
+            },
+            {
+              "title": "5:30 AM",
+              "value": "05:30"
+            },
+            {
+              "title": "5:45 AM",
+              "value": "05:45"
+            },
+            {
+              "title": "6:00 AM",
+              "value": "06:00"
+            },
+            {
+              "title": "6:15 AM",
+              "value": "06:15"
+            },
+            {
+              "title": "6:30 AM",
+              "value": "06:30"
+            },
+            {
+              "title": "6:45 AM",
+              "value": "06:45"
+            },
+            {
+              "title": "7:00 AM",
+              "value": "07:00"
+            },
+            {
+              "title": "7:15 AM",
+              "value": "07:15"
+            },
+            {
+              "title": "7:30 AM",
+              "value": "07:30"
+            },
+            {
+              "title": "7:45 AM",
+              "value": "07:45"
+            },
+            {
+              "title": "8:00 AM",
+              "value": "08:00"
+            },
+            {
+              "title": "8:15 AM",
+              "value": "08:15"
+            },
+            {
+              "title": "8:30 AM",
+              "value": "08:30"
+            },
+            {
+              "title": "8:45 AM",
+              "value": "08:45"
+            },
+            {
+              "title": "9:00 AM",
+              "value": "09:00"
+            },
+            {
+              "title": "9:15 AM",
+              "value": "09:15"
+            },
+            {
+              "title": "9:30 AM",
+              "value": "09:30"
+            },
+            {
+              "title": "9:45 AM",
+              "value": "09:45"
+            },
+            {
+              "title": "10:00 AM",
+              "value": "10:00"
+            },
+            {
+              "title": "10:15 AM",
+              "value": "10:15"
+            },
+            {
+              "title": "10:30 AM",
+              "value": "10:30"
+            },
+            {
+              "title": "10:45 AM",
+              "value": "10:45"
+            },
+            {
+              "title": "11:00 AM",
+              "value": "11:00"
+            },
+            {
+              "title": "11:15 AM",
+              "value": "11:15"
+            },
+            {
+              "title": "11:30 AM",
+              "value": "11:30"
+            },
+            {
+              "title": "11:45 AM",
+              "value": "11:45"
+            },
+            {
+              "title": "12:00 PM",
+              "value": "12:00"
+            },
+            {
+              "title": "12:15 PM",
+              "value": "12:15"
+            },
+            {
+              "title": "12:30 PM",
+              "value": "12:30"
+            },
+            {
+              "title": "12:45 PM",
+              "value": "12:45"
+            },
+            {
+              "title": "1:00 PM",
+              "value": "13:00"
+            },
+            {
+              "title": "1:15 PM",
+              "value": "13:15"
+            },
+            {
+              "title": "1:30 PM",
+              "value": "13:30"
+            },
+            {
+              "title": "1:45 PM",
+              "value": "13:45"
+            },
+            {
+              "title": "2:00 PM",
+              "value": "14:00"
+            },
+            {
+              "title": "2:15 PM",
+              "value": "14:15"
+            },
+            {
+              "title": "2:30 PM",
+              "value": "14:30"
+            },
+            {
+              "title": "2:45 PM",
+              "value": "14:45"
+            },
+            {
+              "title": "3:00 PM",
+              "value": "15:00"
+            },
+            {
+              "title": "3:15 PM",
+              "value": "15:15"
+            },
+            {
+              "title": "3:30 PM",
+              "value": "15:30"
+            },
+            {
+              "title": "3:45 PM",
+              "value": "15:45"
+            },
+            {
+              "title": "4:00 PM",
+              "value": "16:00"
+            },
+            {
+              "title": "4:15 PM",
+              "value": "16:15"
+            },
+            {
+              "title": "4:30 PM",
+              "value": "16:30"
+            },
+            {
+              "title": "4:45 PM",
+              "value": "16:45"
+            },
+            {
+              "title": "5:00 PM",
+              "value": "17:00"
+            },
+            {
+              "title": "5:15 PM",
+              "value": "17:15"
+            },
+            {
+              "title": "5:30 PM",
+              "value": "17:30"
+            },
+            {
+              "title": "5:45 PM",
+              "value": "17:45"
+            },
+            {
+              "title": "6:00 PM",
+              "value": "18:00"
+            },
+            {
+              "title": "6:15 PM",
+              "value": "18:15"
+            },
+            {
+              "title": "6:30 PM",
+              "value": "18:30"
+            },
+            {
+              "title": "6:45 PM",
+              "value": "18:45"
+            },
+            {
+              "title": "7:00 PM",
+              "value": "19:00"
+            },
+            {
+              "title": "7:15 PM",
+              "value": "19:15"
+            },
+            {
+              "title": "7:30 PM",
+              "value": "19:30"
+            },
+            {
+              "title": "7:45 PM",
+              "value": "19:45"
+            },
+            {
+              "title": "8:00 PM",
+              "value": "20:00"
+            },
+            {
+              "title": "8:15 PM",
+              "value": "20:15"
+            },
+            {
+              "title": "8:30 PM",
+              "value": "20:30"
+            },
+            {
+              "title": "8:45 PM",
+              "value": "20:45"
+            },
+            {
+              "title": "9:00 PM",
+              "value": "21:00"
+            },
+            {
+              "title": "9:15 PM",
+              "value": "21:15"
+            },
+            {
+              "title": "9:30 PM",
+              "value": "21:30"
+            },
+            {
+              "title": "9:45 PM",
+              "value": "21:45"
+            },
+            {
+              "title": "10:00 PM",
+              "value": "22:00"
+            },
+            {
+              "title": "10:15 PM",
+              "value": "22:15"
+            },
+            {
+              "title": "10:30 PM",
+              "value": "22:30"
+            },
+            {
+              "title": "10:45 PM",
+              "value": "22:45"
+            },
+            {
+              "title": "11:00 PM",
+              "value": "23:00"
+            },
+            {
+              "title": "11:15 PM",
+              "value": "23:15"
+            },
+            {
+              "title": "11:30 PM",
+              "value": "23:30"
+            },
+            {
+              "title": "11:45 PM",
+              "value": "23:45"
+            }
+          ]
+        },
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "00:00",
+                  "00:15",
+                  "00:30",
+                  "00:45",
+                  "01:00",
+                  "01:15",
+                  "01:30",
+                  "01:45",
+                  "02:00",
+                  "02:15",
+                  "02:30",
+                  "02:45",
+                  "03:00",
+                  "03:15",
+                  "03:30",
+                  "03:45",
+                  "04:00",
+                  "04:15",
+                  "04:30",
+                  "04:45",
+                  "05:00",
+                  "05:15",
+                  "05:30",
+                  "05:45",
+                  "06:00",
+                  "06:15",
+                  "06:30",
+                  "06:45",
+                  "07:00",
+                  "07:15",
+                  "07:30",
+                  "07:45",
+                  "08:00",
+                  "08:15",
+                  "08:30",
+                  "08:45",
+                  "09:00",
+                  "09:15",
+                  "09:30",
+                  "09:45",
+                  "10:00",
+                  "10:15",
+                  "10:30",
+                  "10:45",
+                  "11:00",
+                  "11:15",
+                  "11:30",
+                  "11:45",
+                  "12:00",
+                  "12:15",
+                  "12:30",
+                  "12:45",
+                  "13:00",
+                  "13:15",
+                  "13:30",
+                  "13:45",
+                  "14:00",
+                  "14:15",
+                  "14:30",
+                  "14:45",
+                  "15:00",
+                  "15:15",
+                  "15:30",
+                  "15:45",
+                  "16:00",
+                  "16:15",
+                  "16:30",
+                  "16:45",
+                  "17:00",
+                  "17:15",
+                  "17:30",
+                  "17:45",
+                  "18:00",
+                  "18:15",
+                  "18:30",
+                  "18:45",
+                  "19:00",
+                  "19:15",
+                  "19:30",
+                  "19:45",
+                  "20:00",
+                  "20:15",
+                  "20:30",
+                  "20:45",
+                  "21:00",
+                  "21:15",
+                  "21:30",
+                  "21:45",
+                  "22:00",
+                  "22:15",
+                  "22:30",
+                  "22:45",
+                  "23:00",
+                  "23:15",
+                  "23:30",
+                  "23:45"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ]
+          }
+        ],
+        "name": "endTime",
+        "type": "string"
+      },
+      {
+        "description": "e.g. \"BCIT Downtown Campus\"",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "level": "error",
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "name": "lumaUrl",
+        "type": "url",
+        "title": "Luma URL"
+      },
+      {
+        "rows": 3,
+        "description": "A short 1-2 sentence blurb about the event. This will be shown on the event card",
+        "name": "shortDescription",
+        "type": "text"
+      }
+    ],
+    "name": "event",
+    "type": "document"
+  }
+]
