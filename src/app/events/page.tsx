@@ -11,14 +11,16 @@ export default async function Events() {
       {events.length === 0 ? (
         <p>No published events yet.</p>
       ) : (
-        events.map((event) => (
+        events.map((event, index) => (
           <div key={event._id}>
             <h3>{event.title}</h3>
             <Image
               src={urlFor(event.coverImage).url()}
               alt={event.title}
-              width={300}
-              height={200}
+              width={100}
+              height={100}
+              className='w-[100px] h-[100px]'
+              priority={index === 0}
             />
             {event.location ? <p>{event.location}</p> : null}
             {event.shortDescription ? <p>{event.shortDescription}</p> : null}
