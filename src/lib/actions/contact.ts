@@ -3,7 +3,7 @@
 import { z } from "zod";
 import { resend } from "@/lib/resend";
 
-export const CONTACT_TYPES = [
+const CONTACT_TYPES = [
   { value: "general", label: "General question" },
   { value: "discord", label: "Discord / joining the club" },
   { value: "collaboration", label: "Collaboration or event" },
