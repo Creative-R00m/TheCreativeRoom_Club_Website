@@ -25,6 +25,16 @@ const contactSchema = z.object({
   website: z.string().max(0, "").optional(),
 });
 
+function sanitizeEmailHeaderValue(value: string, maxLength = 80) {
+  return (
+    value
+      .replace(/[\r\n\u0000-\u001F\u007F]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, maxLength) || "Unknown"
+  );
+}
+
 export type ContactFormState = {
   status: "idle" | "success" | "error";
   message?: string;
@@ -35,6 +45,13 @@ export async function submitContactForm(
   _prevState: ContactFormState,
   formData: FormData,
 ): Promise<ContactFormState> {
+  const startTime = Number(formData.get("startTime"));
+  const elapsed = Date.now() - startTime;
+
+  if (!startTime || elapsed < 3000) {
+    return { status: "success" };
+  }
+
   const raw = {
     name: formData.get("name"),
     email: formData.get("email"),
@@ -62,11 +79,14 @@ export async function submitContactForm(
     CONTACT_TYPES.find((t) => t.value === parsed.data.contactType)?.label ??
     parsed.data.contactType;
 
+  const sanitizedName = sanitizeEmailHeaderValue(parsed.data.name, 60);
+  const sanitizedTypeLabel = sanitizeEmailHeaderValue(typeLabel, 40);
+
   const { error } = await resend.emails.send({
     from: "TCR Contact <onboarding@resend.dev>", // swap once your domain is verified
     to: "thecreativeroom.damd@gmail.com",
     replyTo: parsed.data.email,
-    subject: `[${typeLabel}] New message from ${parsed.data.name}`,
+    subject: `[${sanitizedTypeLabel}] New message from ${sanitizedName}`,
     text: parsed.data.message,
   });
 
