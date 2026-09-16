@@ -4,11 +4,15 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <div>
+    <div className='px-[var(--site-margin-x)]'>
       <h1>The Creative Room</h1>
       <Button variant='default' size='default'>
         Click Me
       </Button>
+
+      <div
+        className={`mx-[-var(--site-margin-x)] w-screen ${styles.bleedOut} ${styles.red}`}
+      ></div>
     </div>
   );
 }
