@@ -56,7 +56,11 @@ export function ContactForm() {
                 aria-invalid={Boolean(state.fieldErrors?.contactType)}
                 className='w-full'
               >
-                <SelectValue placeholder='Select a topic' />
+                <SelectValue placeholder='Select a topic'>
+                  {(value) =>
+                    CONTACT_TYPES.find((type) => type.value === value)?.label
+                  }
+                </SelectValue>
               </SelectTrigger>
               <SelectContent>
                 {CONTACT_TYPES.map((type) => (
