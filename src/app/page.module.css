@@ -1,0 +1,10 @@
+.red {
+  background-color: red;
+  width: 100vw;
+  height: 5rem;
+}
+
+.bleedOut {
+  width: 100vw;
+  margin-left: calc(var(--site-margin-x) * -1);
+}
