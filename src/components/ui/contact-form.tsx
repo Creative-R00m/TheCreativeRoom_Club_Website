@@ -84,6 +84,7 @@ export function ContactForm() {
                 type='text'
                 id='name'
                 name='name'
+                placeholder='Your full name'
                 aria-invalid={Boolean(state.fieldErrors?.name)}
               />
               <FieldError>
@@ -99,6 +100,7 @@ export function ContactForm() {
                 type='email'
                 id='email'
                 name='email'
+                placeholder='hello@example.com'
                 aria-invalid={Boolean(state.fieldErrors?.email)}
               />
               <FieldError>
@@ -114,6 +116,7 @@ export function ContactForm() {
             <Textarea
               id='message'
               name='message'
+              placeholder="Tell us what's on your mind..."
               aria-invalid={Boolean(state.fieldErrors?.message)}
             />
             <FieldError>
