@@ -26,10 +26,10 @@ import {
 } from "@/components/ui/select";
 
 const CONTACT_TYPES = [
-  { value: "general", label: "General question" },
-  { value: "discord", label: "Discord / joining the club" },
-  { value: "collaboration", label: "Collaboration or event" },
-  { value: "sponsorship", label: "Sponsorship" },
+  { value: "general", label: "General Inquiry" },
+  { value: "events", label: "Events" },
+  { value: "collaboration/partnership", label: "Collaboration / Partnership" },
+  { value: "other", label: "Something Else" },
 ] as const;
 
 const initialState: ContactFormState = {
