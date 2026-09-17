@@ -137,7 +137,7 @@ export function ContactForm() {
         />
 
         <Button type='submit' disabled={isPending}>
-          {isPending ? "Sending..." : "Send"}
+          {isPending ? "Sending..." : "Send Message"}
         </Button>
 
         {state.message && (
