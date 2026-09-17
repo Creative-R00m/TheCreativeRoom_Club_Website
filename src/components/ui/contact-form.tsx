@@ -29,7 +29,7 @@ const CONTACT_TYPES = [
   { value: "general", label: "General Inquiry" },
   { value: "events", label: "Events" },
   { value: "collaboration/partnership", label: "Collaboration / Partnership" },
-  { value: "other", label: "Something Else" },
+  { value: "other ", label: "Something Else" },
 ] as const;
 
 const initialState: ContactFormState = {
@@ -46,38 +46,10 @@ export function ContactForm() {
     <form action={formAction} noValidate className='w-full max-w-xl'>
       <FieldSet>
         <FieldGroup>
-          <Field data-invalid={Boolean(state.fieldErrors?.name)}>
-            <FieldLabel htmlFor='name'>Name</FieldLabel>
-            <Input
-              type='text'
-              id='name'
-              name='name'
-              aria-invalid={Boolean(state.fieldErrors?.name)}
-            />
-            <FieldError>
-              {state.fieldErrors?.name?.map((error) => (
-                <span key={error}>{error}</span>
-              ))}
-            </FieldError>
-          </Field>
-
-          <Field data-invalid={Boolean(state.fieldErrors?.email)}>
-            <FieldLabel htmlFor='email'>Email</FieldLabel>
-            <Input
-              type='email'
-              id='email'
-              name='email'
-              aria-invalid={Boolean(state.fieldErrors?.email)}
-            />
-            <FieldError>
-              {state.fieldErrors?.email?.map((error) => (
-                <span key={error}>{error}</span>
-              ))}
-            </FieldError>
-          </Field>
-
           <Field data-invalid={Boolean(state.fieldErrors?.contactType)}>
-            <FieldLabel htmlFor='contactType'>Reason for contact</FieldLabel>
+            <FieldLabel htmlFor='contactType' className='type-label'>
+              Type of Inquiry
+            </FieldLabel>
             <Select name='contactType' defaultValue=''>
               <SelectTrigger
                 id='contactType'
@@ -100,6 +72,38 @@ export function ContactForm() {
               ))}
             </FieldError>
           </Field>
+
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+            <Field data-invalid={Boolean(state.fieldErrors?.name)}>
+              <FieldLabel htmlFor='name'>Name</FieldLabel>
+              <Input
+                type='text'
+                id='name'
+                name='name'
+                aria-invalid={Boolean(state.fieldErrors?.name)}
+              />
+              <FieldError>
+                {state.fieldErrors?.name?.map((error) => (
+                  <span key={error}>{error}</span>
+                ))}
+              </FieldError>
+            </Field>
+
+            <Field data-invalid={Boolean(state.fieldErrors?.email)}>
+              <FieldLabel htmlFor='email'>Email</FieldLabel>
+              <Input
+                type='email'
+                id='email'
+                name='email'
+                aria-invalid={Boolean(state.fieldErrors?.email)}
+              />
+              <FieldError>
+                {state.fieldErrors?.email?.map((error) => (
+                  <span key={error}>{error}</span>
+                ))}
+              </FieldError>
+            </Field>
+          </div>
 
           <Field data-invalid={Boolean(state.fieldErrors?.message)}>
             <FieldLabel htmlFor='message'>Message</FieldLabel>
