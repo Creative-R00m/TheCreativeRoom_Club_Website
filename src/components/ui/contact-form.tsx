@@ -44,7 +44,7 @@ export function ContactForm() {
   );
 
   return (
-    <form action={formAction} noValidate className='w-full max-w-xl'>
+    <form action={formAction} noValidate className='w-full max-w-lg'>
       <FieldSet>
         <FieldGroup>
           <Field data-invalid={Boolean(state.fieldErrors?.contactType)}>
@@ -142,7 +142,7 @@ export function ContactForm() {
           aria-hidden='true'
         />
 
-        <Button type='submit' disabled={isPending}>
+        <Button type='submit' disabled={isPending} className='mt-8'>
           {isPending ? "Sending..." : "Send Message"}
         </Button>
 

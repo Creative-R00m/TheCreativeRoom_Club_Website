@@ -1,5 +1,6 @@
 .contactPage {
   margin-top: var(--space-section-sm);
+  background: lightgray;
 }
 
 .contact {
@@ -15,6 +16,18 @@
   flex-direction: column;
   max-width: 20rem;
   justify-content: space-between;
+}
+
+.contactHeaderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contactMethods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .contactMethod {

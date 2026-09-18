@@ -6,16 +6,18 @@ export default function Contact() {
     <div className={`px-[var(--site-margin-x)] ${styles.contactPage}`}>
       <div className={styles.contact}>
         <div className={styles.contactInfo}>
-          <div className={styles.contactHeader}>
-            <p className='type-eyebrow'>Get in touch</p>
-            <h1 className='type-h1'>Contact Us</h1>
-          </div>
-          <div className={styles.contactDescription}>
-            <p className='type-body'>
-              Whether you’re curious about an upcoming event, have a project in
-              mind, or just want to introduce yourself, our inbox is always
-              open. Reach out and let’s start a conversation!
-            </p>
+          <div className={styles.contactHeaderContainer}>
+            <div className={styles.contactHeader}>
+              <p className='type-eyebrow'>Get in touch</p>
+              <h1 className='type-h1'>Contact Us</h1>
+            </div>
+            <div className={styles.contactDescription}>
+              <p className='type-body'>
+                Whether you’re curious about an upcoming event, have a project
+                in mind, or just want to introduce yourself, our inbox is always
+                open. Reach out and let’s start a conversation!
+              </p>
+            </div>
           </div>
           <div className={styles.contactMethods}>
             <div className={styles.contactMethod}>
