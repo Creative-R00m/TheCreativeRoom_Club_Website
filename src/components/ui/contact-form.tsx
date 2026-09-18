@@ -1,7 +1,7 @@
 // src/components/contact-form.tsx
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import {
   submitContactForm,
   type ContactFormState,
@@ -37,6 +37,7 @@ const initialState: ContactFormState = {
 };
 
 export function ContactForm() {
+  const [contactType, setContactType] = useState("general");
   const [state, formAction, isPending] = useActionState(
     submitContactForm,
     initialState,
@@ -50,7 +51,11 @@ export function ContactForm() {
             <FieldLabel htmlFor='contactType' className='type-label'>
               Type of Inquiry
             </FieldLabel>
-            <Select name='contactType' defaultValue=''>
+            <Select
+              name='contactType'
+              value={contactType}
+              onValueChange={(value) => setContactType(value ?? "general")}
+            >
               <SelectTrigger
                 id='contactType'
                 aria-invalid={Boolean(state.fieldErrors?.contactType)}
