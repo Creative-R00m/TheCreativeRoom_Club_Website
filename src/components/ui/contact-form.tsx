@@ -117,6 +117,7 @@ export function ContactForm() {
               id='message'
               name='message'
               placeholder="Tell us what's on your mind..."
+              rows={8}
               aria-invalid={Boolean(state.fieldErrors?.message)}
             />
             <FieldError>
