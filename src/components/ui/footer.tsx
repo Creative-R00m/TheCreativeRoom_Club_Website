@@ -23,39 +23,51 @@ export default function Footer() {
           <div className='flex flex-row gap-14'>
             <div className='flex flex-col gap-4'>
               <h4 className='type-label uppercase mb-2'>Menu</h4>
-              <Link href='/' className='type-body'>
+              <Link href='/' className='type-body hover:underline'>
                 Home
               </Link>{" "}
               {/* black only when on that page, else gray */}
-              <Link href='/about' className='type-body text-secondary'>
+              <Link
+                href='/about'
+                className='type-body text-secondary hover:underline'
+              >
                 About Us
               </Link>
-              <Link href='/events' className='type-body text-secondary'>
+              <Link
+                href='/events'
+                className='type-body text-secondary hover:underline'
+              >
                 Our Events
               </Link>
-              <Link href='/contact' className='type-body text-secondary'>
+              <Link
+                href='/contact'
+                className='type-body text-secondary hover:underline'
+              >
                 Contact
               </Link>
             </div>
             <div className='flex flex-col gap-4'>
               <h4 className='type-label uppercase mb-2'>Socials</h4>
               <Link
-                className='type-body text-secondary'
+                className='type-body text-secondary hover:underline'
                 href='https://www.instagram.com/thecreativeroomclub/'
               >
-                Instagram <ArrowUpRight className='inline' />
+                Instagram{" "}
+                <ArrowUpRight className='inline' strokeWidth={1.5} size={20} />
               </Link>
               <Link
-                className='type-body text-secondary'
+                className='type-body text-secondary hover:underline'
                 href='https://www.linkedin.com/company/thecreativeroomclub/'
               >
-                LinkedIn <ArrowUpRight className='inline' />
+                LinkedIn{" "}
+                <ArrowUpRight className='inline' strokeWidth={1.5} size={20} />
               </Link>
               <Link
-                className='type-body text-secondary'
-                href='https://www.facebook.com/thecreativeroomclub/'
+                className='type-body text-secondary hover:underline'
+                href='https://discord.gg/creative-room'
               >
-                Discord <ArrowUpRight className='inline' />
+                Discord{" "}
+                <ArrowUpRight className='inline' strokeWidth={1.5} size={20} />
               </Link>
             </div>
           </div>
@@ -65,10 +77,16 @@ export default function Footer() {
             © 2026 The Creative Room. All rights reserved.
           </p>
           <div className='flex flex-row gap-6'>
-            <Link className='type-body text-muted' href='/privacy-policy'>
+            <Link
+              className='type-body text-muted hover:underline'
+              href='/privacy-policy'
+            >
               Privacy Policy
             </Link>
-            <Link className='type-body text-muted' href='/terms-of-service'>
+            <Link
+              className='type-body text-muted hover:underline'
+              href='/terms-of-service'
+            >
               Terms of Service
             </Link>
           </div>
