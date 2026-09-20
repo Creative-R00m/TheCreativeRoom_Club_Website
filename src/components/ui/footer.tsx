@@ -1,12 +1,14 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer>
-      <div className='px-[var(--site-margin-x)] py-14 flex flex-col gap-12'>
+    <footer
+      className='bg-no-repeat bg-[length:100%_100%]'
+      style={{ backgroundImage: "url('/images/paper-rip-1.png')" }}
+    >
+      <div className='px-[var(--site-margin-x)] pt-48 pb-14 flex flex-col gap-12'>
         <div className='flex flex-row justify-between'>
           <div className='flex flex-col justify-between max-w-[30ch]'>
             <Image
@@ -92,7 +94,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      {/* img */}
     </footer>
   );
 }
