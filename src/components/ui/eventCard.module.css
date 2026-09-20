@@ -44,7 +44,23 @@
   padding: 1rem;
   background: lightgrey;
   border-radius: 20px;
+  position: relative;
   gap: 12px;
+}
+
+.event-details::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #000 0 6px,
+    transparent 6px 12px
+  );
+  pointer-events: none;
 }
 
 .event-title {
@@ -84,5 +100,19 @@
   .event-image {
     width: 100%;
     justify-self: stretch;
+  }
+
+  .event-details::before {
+    left: 20px;
+    right: 20px;
+    top: -1px;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+    background: repeating-linear-gradient(
+      to right,
+      #000 0 6px,
+      transparent 6px 12px
+    );
   }
 }
