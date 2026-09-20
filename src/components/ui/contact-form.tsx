@@ -138,7 +138,7 @@ export function ContactForm() {
           name='website'
           tabIndex={-1}
           autoComplete='off'
-          className='sr-only'
+          className='sr-only !h-0 !min-w-0 !w-0 !p-0'
           aria-hidden='true'
         />
 
