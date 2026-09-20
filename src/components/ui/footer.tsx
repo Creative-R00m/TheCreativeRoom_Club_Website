@@ -9,39 +9,68 @@ export default function Footer() {
       <div>
         <div>
           <div>
-            {/* logo */}
-            <p>
+            <Image
+              src='/logo_primary.svg'
+              alt='Logo'
+              width={100}
+              height={100}
+            />
+            <p className='type-body'>
               A community-driven creative hub for designers, developers, and
               makers at BCIT.
             </p>
           </div>
           <div>
             <div>
-              <h4>Menu</h4>
-              <Link href='/'>Home</Link>
-              <Link href='/about'>About Us</Link>
-              <Link href='/events'>Our Events</Link>
-              <Link href='/contact'>Contact</Link>
+              <h4 className='type-label uppercase'>Menu</h4>
+              <Link href='/' className='type-body'>
+                Home
+              </Link>{" "}
+              {/* black only when on that page, else gray */}
+              <Link href='/about' className='type-body text-secondary'>
+                About Us
+              </Link>
+              <Link href='/events' className='type-body text-secondary'>
+                Our Events
+              </Link>
+              <Link href='/contact' className='type-body text-secondary'>
+                Contact
+              </Link>
             </div>
             <div>
-              <h4>Socials</h4>
-              <Link href='https://www.instagram.com/thecreativeroomclub/'>
+              <h4 className='type-label uppercase'>Socials</h4>
+              <Link
+                className='type-body text-secondary'
+                href='https://www.instagram.com/thecreativeroomclub/'
+              >
                 Instagram <ArrowUpRight className='inline' />
               </Link>
-              <Link href='https://www.linkedin.com/company/thecreativeroomclub/'>
+              <Link
+                className='type-body text-secondary'
+                href='https://www.linkedin.com/company/thecreativeroomclub/'
+              >
                 LinkedIn <ArrowUpRight className='inline' />
               </Link>
-              <Link href='https://www.facebook.com/thecreativeroomclub/'>
+              <Link
+                className='type-body text-secondary'
+                href='https://www.facebook.com/thecreativeroomclub/'
+              >
                 Discord <ArrowUpRight className='inline' />
               </Link>
             </div>
           </div>
         </div>
         <div>
-          <p>© 2026 The Creative Room. All rights reserved.</p>
+          <p className='type-body text-muted'>
+            © 2026 The Creative Room. All rights reserved.
+          </p>
           <div>
-            <Link href='/privacy-policy'>Privacy Policy</Link>
-            <Link href='/terms-of-service'>Terms of Service</Link>
+            <Link className='type-body text-muted' href='/privacy-policy'>
+              Privacy Policy
+            </Link>
+            <Link className='type-body text-muted' href='/terms-of-service'>
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
