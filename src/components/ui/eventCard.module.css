@@ -1,7 +1,8 @@
 .event-card {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  width: 70%;
+  grid-template-columns: minmax(0, 20rem) minmax(0, 2fr);
+  gap: 0;
+  width: min(70%, 72rem);
   margin: 0 auto;
   height: fit-content;
 }
@@ -14,9 +15,10 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 100%;
-  /* aspect-ratio: 1 / 1; */
-  padding: 1rem;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  align-self: start;
+  padding: 0.5rem;
 }
 
 .event-image-inner {
@@ -38,6 +40,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 0;
   padding: 1rem;
   background: lightgrey;
   border-radius: 20px;
@@ -70,4 +73,16 @@
 
 .event-register {
   margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .event-card {
+    grid-template-columns: 1fr;
+    width: min(100% - 2rem, 36rem);
+  }
+
+  .event-image {
+    width: 100%;
+    justify-self: stretch;
+  }
 }
