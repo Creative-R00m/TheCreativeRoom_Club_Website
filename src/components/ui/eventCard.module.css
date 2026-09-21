@@ -78,7 +78,16 @@
   font-size: 12px;
 }
 
+.event-date,
+.event-location,
 .event-time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #373737;
+}
+
+.event-time-text {
   display: flex;
   flex-direction: row;
 }
