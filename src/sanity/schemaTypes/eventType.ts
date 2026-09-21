@@ -72,6 +72,12 @@ export const eventType = defineType({
       validation: (rule) => rule.required().uri({ scheme: ["http", "https"] }),
     }),
     defineField({
+      name: "price",
+      title: "Price",
+      type: "number",
+      description: "Put 0 for free events",
+    }),
+    defineField({
       name: "shortDescription",
       title: "Short Description",
       type: "text",
