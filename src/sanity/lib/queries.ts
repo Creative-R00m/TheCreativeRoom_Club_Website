@@ -11,6 +11,7 @@ export type EventCard = {
   startTime: string;
   endTime: string;
   location?: string | null;
+  price?: number | null;
   shortDescription?: string | null;
 };
 
@@ -25,6 +26,7 @@ export const EVENTS_QUERY = defineQuery(`
         endTime,
         location,
         lumaUrl,
+        price,
         shortDescription,
     }
 `);
