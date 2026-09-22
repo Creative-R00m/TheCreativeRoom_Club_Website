@@ -100,7 +100,10 @@ export default function Contact() {
       </div>
 
       <div className='mt-[var(--space-section-lg)]'>
-        <div></div>
+        <div className={styles.faqHeader}>
+          <h4 className='type-eyebrow'>Frequently Asked Questions</h4>
+          <h2 className='type-h1'>FAQ</h2>
+        </div>
         <div className={styles.faq}>
           <Accordion
             defaultValue={initialAccordionValue}

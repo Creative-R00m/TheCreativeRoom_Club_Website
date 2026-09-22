@@ -47,8 +47,17 @@
   background-color: var(--color-background);
 }
 
+.faqHeader {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-inline: auto;
+  gap: 0.75rem;
+}
+
 .faq {
-  align-items: center;
   display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
 }
