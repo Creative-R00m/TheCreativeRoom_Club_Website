@@ -1,7 +1,38 @@
 import { ContactForm } from "@/components/ui/contact-form";
 import styles from "./page.module.css";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const initialAccordionValue = ["item-1"];
 
 export default function Contact() {
+  const items = [
+    {
+      value: "item-1",
+      trigger: "Who can join The Creative Room?",
+      content:
+        "Any current or past BCIT student can register as a member. Not a student? You can still join us at our community events.",
+    },
+    {
+      value: "item-2",
+      trigger: "Is there a registration fee?",
+      content: "No. You can choose events you'd like to attend.",
+    },
+    {
+      value: "item-3",
+      trigger: "Do I have to attend every club event?",
+      content: "No. You can choose events you'd like to attend.",
+    },
+    {
+      value: "item-4",
+      trigger: "How do I join the club?",
+      content: "Visit our Discord server link and fill out the application.",
+    },
+  ];
   return (
     <div className={`px-[var(--site-margin-x)] ${styles.contactPage}`}>
       <div className={styles.contact}>
@@ -66,6 +97,20 @@ export default function Contact() {
         </div>
 
         <ContactForm />
+      </div>
+
+      <div>
+        <div></div>
+        <div>
+          <Accordion defaultValue={initialAccordionValue} className='max-w-lg'>
+            {items.map((item) => (
+              <AccordionItem key={item.value} value={item.value}>
+                <AccordionTrigger>{item.trigger}</AccordionTrigger>
+                <AccordionContent>{item.content}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </div>
   );
