@@ -99,10 +99,13 @@ export default function Contact() {
         <ContactForm />
       </div>
 
-      <div>
+      <div className='mt-[var(--space-section-lg)]'>
         <div></div>
-        <div>
-          <Accordion defaultValue={initialAccordionValue} className='max-w-lg'>
+        <div className={styles.faq}>
+          <Accordion
+            defaultValue={initialAccordionValue}
+            className={`max-w-1/2 ${styles.accordion}`}
+          >
             {items.map((item) => (
               <AccordionItem key={item.value} value={item.value}>
                 <AccordionTrigger>{item.trigger}</AccordionTrigger>

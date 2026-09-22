@@ -16,7 +16,7 @@ function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props) {
   return (
     <AccordionPrimitive.Item
       data-slot='accordion-item'
-      className={cn("rounded-main bg-white", className)}
+      className={cn("rounded-main bg-white p-6", className)}
       {...props}
     />
   );
