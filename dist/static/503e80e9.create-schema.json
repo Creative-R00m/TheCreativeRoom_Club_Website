@@ -1094,6 +1094,11 @@
         "title": "Luma URL"
       },
       {
+        "description": "Put 0 for free events",
+        "name": "price",
+        "type": "number"
+      },
+      {
         "rows": 3,
         "description": "A short 1-2 sentence blurb about the event. This will be shown on the event card",
         "name": "shortDescription",
