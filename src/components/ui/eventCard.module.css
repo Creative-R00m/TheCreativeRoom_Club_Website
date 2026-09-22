@@ -8,7 +8,7 @@
 }
 
 .event-image {
-  background: lightgrey;
+  background: #fff;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -42,7 +42,7 @@
   justify-content: center;
   min-width: 0;
   padding: 1rem;
-  background: lightgrey;
+  background: #fff;
   border-radius: 20px;
   position: relative;
   gap: 12px;
@@ -101,6 +101,15 @@
 
 .event-register {
   margin-top: 20px;
+}
+
+.register-link {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
 }
 
 @media (max-width: 1024px) {

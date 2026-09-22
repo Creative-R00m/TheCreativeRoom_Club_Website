@@ -2,6 +2,7 @@ import styles from "./eventCard.module.css";
 import { Button } from "./button";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
+import { ArrowRight } from "lucide-react";
 
 export function EventCard({ event, index }: { event: any; index: number }) {
   return (
@@ -22,7 +23,7 @@ export function EventCard({ event, index }: { event: any; index: number }) {
         </div>
       </div>
       <div className={styles["event-details"]}>
-        <h3 className={styles["event-title"]}>{event.title}</h3>
+        <h3 className='type-h2'>{event.title}</h3>
         <div className={styles["event-info"]}>
           <div className={styles["event-date"]}>
             <svg
@@ -97,16 +98,19 @@ export function EventCard({ event, index }: { event: any; index: number }) {
           </div>
         </div>
         {event.shortDescription ? (
-          <p className={styles["event-short-description"]}>
-            {event.shortDescription}
-          </p>
+          <p className='type-body'>{event.shortDescription}</p>
         ) : null}
         <div className={styles["event-register"]}>
           {event.lumaUrl ? (
-            <Button variant='default' size='default' radius='default'>
-              <a href={event.lumaUrl} target='_blank' rel='noopener noreferrer'>
+            <Button variant='default' size='sm' radius='default'>
+              <a
+                href={event.lumaUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                className={`${styles["register-link"]} type-button`}
+              >
                 Register Now
-                {/* icon */}
+                <ArrowRight style={{ width: 16, height: 16 }} />
               </a>
             </Button>
           ) : null}
