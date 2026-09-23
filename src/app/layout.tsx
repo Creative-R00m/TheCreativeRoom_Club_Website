@@ -3,6 +3,7 @@ import { Asta_Sans, Copse } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/components/ui/navbar";
+import Footer from "@/components/ui/footer";
 
 const fontSans = Asta_Sans({
   variable: "--font-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
