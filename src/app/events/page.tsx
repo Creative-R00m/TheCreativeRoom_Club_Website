@@ -1,10 +1,12 @@
-import { fetchUpcomingEvents } from "@/sanity/lib/queries";
+import { fetchGalleryAlbums, fetchUpcomingEvents } from "@/sanity/lib/queries";
 import { EventCard } from "@/components/ui/eventCard";
+import { GalleryCarousel } from "@/components/ui/galleryCarousel";
 
 export const revalidate = 60;
 
 export default async function Events() {
   const events = await fetchUpcomingEvents(2);
+  const albums = await fetchGalleryAlbums();
 
   return (
     <div>
@@ -18,6 +20,7 @@ export default async function Events() {
           </div>
         ))
       )}
+      <GalleryCarousel albums={albums} />
     </div>
   );
 }
