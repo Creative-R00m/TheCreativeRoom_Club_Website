@@ -1,8 +1,21 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const menuLinks = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About Us" },
+  { href: "/events", label: "Our Events" },
+  { href: "/contact", label: "Contact" },
+];
 
 export default function Footer() {
+  const pathname = usePathname();
+
   return (
     <footer
       className='bg-no-repeat bg-[length:100%_100%]'
@@ -25,34 +38,28 @@ export default function Footer() {
           <div className='flex flex-row gap-14'>
             <div className='flex flex-col gap-4'>
               <h4 className='type-label uppercase mb-2'>Menu</h4>
-              <Link href='/' className='type-body hover:underline'>
-                Home
-              </Link>{" "}
-              {/* black only when on that page, else gray */}
-              <Link
-                href='/about'
-                className='type-body text-secondary hover:underline'
-              >
-                About Us
-              </Link>
-              <Link
-                href='/events'
-                className='type-body text-secondary hover:underline'
-              >
-                Our Events
-              </Link>
-              <Link
-                href='/contact'
-                className='type-body text-secondary hover:underline'
-              >
-                Contact
-              </Link>
+              {menuLinks.map((link) => {
+                const isActive = pathname === link.href;
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={cn(
+                      "type-body hover:underline",
+                      isActive ? "text-primary" : "text-secondary",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </div>
             <div className='flex flex-col gap-4'>
               <h4 className='type-label uppercase mb-2'>Socials</h4>
               <Link
                 className='type-body text-secondary hover:underline'
-                href='https://www.instagram.com/thecreativeroomclub/'
+                href='https://www.instagram.com/thecreativeroom.damd/'
               >
                 Instagram{" "}
                 <ArrowUpRight className='inline' strokeWidth={1.5} size={20} />
