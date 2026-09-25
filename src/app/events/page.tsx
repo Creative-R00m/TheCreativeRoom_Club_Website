@@ -54,7 +54,10 @@ export default async function Events() {
           </div>
           <div>
             <Button size='sm'>
-              <a href='/events' className='flex items-center gap-2'>
+              <a
+                href='https://www.instagram.com/thecreativeroom.damd/'
+                className='flex items-center gap-2'
+              >
                 See more on insta
                 <ArrowRight style={{ width: 16, height: 16 }} />
               </a>

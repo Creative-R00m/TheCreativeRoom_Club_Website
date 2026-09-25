@@ -21,7 +21,10 @@ export default async function Home() {
           </div>
           <div className={styles.eventsButton}>
             <Button size='sm'>
-              <a href='/events' className='flex items-center gap-2'>
+              <a
+                href='/https://luma.com/user/usr-REFSBx4C5vAJZM5'
+                className='flex items-center gap-2'
+              >
                 See more on luma
                 <ArrowRight style={{ width: 16, height: 16 }} />
               </a>
