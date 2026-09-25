@@ -14,7 +14,7 @@ export default async function Home() {
         <h1>The Creative Room</h1>
       </div>
       <div className={styles.events}>
-        <div>
+        <div className={styles.eventsHeader}>
           <div>
             <h3 className='type-eyebrow'>Come Hang Out</h3>
             <h2 className='type-h2'>Upcoming Events</h2>

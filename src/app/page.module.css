@@ -8,3 +8,15 @@
   width: 100vw;
   margin-left: calc(var(--site-margin-x) * -1);
 }
+
+.events {
+  margin-top: 5rem;
+}
+
+.eventsHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
