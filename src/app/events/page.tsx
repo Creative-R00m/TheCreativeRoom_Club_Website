@@ -64,7 +64,9 @@ export default async function Events() {
             </Button>
           </div>
         </div>
-        <GalleryCarousel albums={albums} />
+        <div className='-mx-[var(--site-margin-x)]'>
+          <GalleryCarousel albums={albums} />
+        </div>
       </div>
     </div>
   );
