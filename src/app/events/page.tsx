@@ -9,7 +9,7 @@ export default async function Events() {
   const albums = await fetchGalleryAlbums();
 
   return (
-    <div>
+    <div className='px-[var(--site-margin-x)]'>
       <h1>Events</h1>
       {events.length === 0 ? (
         <p>No upcoming events yet.</p>
@@ -20,7 +20,9 @@ export default async function Events() {
           </div>
         ))
       )}
-      <GalleryCarousel albums={albums} />
+      <div className='-mx-[var(--site-margin-x)]'>
+        <GalleryCarousel albums={albums} />
+      </div>
     </div>
   );
 }
