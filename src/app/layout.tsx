@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Asta_Sans, Copse } from "next/font/google";
 import "./globals.css";
 
+import { Toaster } from "@/components/ui/toast";
 import Navbar from "@/components/ui/navbar";
 import Footer from "@/components/ui/footer";
 
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
