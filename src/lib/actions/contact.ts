@@ -63,7 +63,7 @@ export async function submitContactForm(
     parsed.data.contactType;
 
   const { error } = await resend.emails.send({
-    from: "TCR Contact <onboarding@resend.dev>", // swap once your domain is verified
+    from: "TCR Contact <contact@mail.thecreativeroom.org>", // swap once your domain is verified
     to: "thecreativeroom.damd@gmail.com",
     replyTo: parsed.data.email,
     subject: `[${typeLabel}] New message from ${parsed.data.name}`,

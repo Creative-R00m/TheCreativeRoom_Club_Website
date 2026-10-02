@@ -1,7 +1,6 @@
-// src/components/contact-form.tsx
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useState, useEffect } from "react";
 import {
   submitContactForm,
   type ContactFormState,
@@ -24,12 +23,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { toast } from "@/components/ui/toast";
 
 const CONTACT_TYPES = [
   { value: "general", label: "General Inquiry" },
   { value: "events", label: "Events" },
   { value: "collaboration/partnership", label: "Collaboration / Partnership" },
-  { value: "other ", label: "Something Else" },
+  { value: "other", label: "Something Else" },
 ] as const;
 
 const initialState: ContactFormState = {
@@ -42,6 +42,22 @@ export function ContactForm() {
     submitContactForm,
     initialState,
   );
+
+  useEffect(() => {
+    if (state.status === "success") {
+      toast.add({
+        title: "Email sent!",
+        description: state.message,
+        type: "success",
+      });
+    } else if (state.status === "error") {
+      toast.add({
+        title: "Something went wrong",
+        description: state.message,
+        type: "error",
+      });
+    }
+  }, [state]);
 
   return (
     <form action={formAction} noValidate className='w-full max-w-lg'>
@@ -145,12 +161,6 @@ export function ContactForm() {
         <Button type='submit' disabled={isPending} className='mt-8'>
           {isPending ? "Sending..." : "Send Message"}
         </Button>
-
-        {state.message && (
-          <Alert variant={state.status === "error" ? "destructive" : "default"}>
-            <AlertDescription>{state.message}</AlertDescription>
-          </Alert>
-        )}
       </FieldSet>
     </form>
   );
