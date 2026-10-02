@@ -12,7 +12,16 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 
-export function MobileNav() {
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+interface MobileNavProps {
+  links: NavLink[];
+}
+
+export function MobileNav({ links }: MobileNavProps) {
   return (
     <Sheet>
       <SheetTrigger
@@ -21,35 +30,22 @@ export function MobileNav() {
         <Menu className='h-5 w-5' />
         <span className='sr-only'>Toggle menu</span>
       </SheetTrigger>
-      <SheetContent side='left' className='w-[280px] sm:w-[320px]'>
+
+      <SheetContent side='top' className='w-[280px] sm:w-[320px]'>
         <SheetHeader>
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
+
         <nav className='flex flex-col gap-4 mt-6'>
-          <SheetClose
-            nativeButton={false}
-            render={<Link href='/' className='text-lg font-medium' />}
-          >
-            Home
-          </SheetClose>
-          <SheetClose
-            nativeButton={false}
-            render={<Link href='/events' className='text-lg font-medium' />}
-          >
-            Events
-          </SheetClose>
-          <SheetClose
-            nativeButton={false}
-            render={<Link href='/about' className='text-lg font-medium' />}
-          >
-            About
-          </SheetClose>
-          <SheetClose
-            nativeButton={false}
-            render={<Link href='/contact' className='text-lg font-medium' />}
-          >
-            Contact
-          </SheetClose>
+          {links.map((link) => (
+            <SheetClose
+              key={link.href}
+              nativeButton={false}
+              render={<Link href={link.href} className='text-lg font-medium' />}
+            >
+              {link.label}
+            </SheetClose>
+          ))}
         </nav>
       </SheetContent>
     </Sheet>
