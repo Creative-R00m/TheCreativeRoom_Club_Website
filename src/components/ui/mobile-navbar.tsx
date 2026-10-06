@@ -25,18 +25,18 @@ export function MobileNav({ links }: MobileNavProps) {
   return (
     <Sheet>
       <SheetTrigger
-        render={<Button variant='ghost' size='icon' className='md:hidden' />}
+        render={<Button variant='link' size='icon' className='md:hidden' />}
       >
-        <Menu className='h-5 w-5' />
+        <Menu className='size-5' />
         <span className='sr-only'>Toggle menu</span>
       </SheetTrigger>
 
-      <SheetContent side='top' className='w-[280px] sm:w-[320px]'>
+      <SheetContent side='top' className='!h-full w-full'>
         <SheetHeader>
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
 
-        <nav className='flex flex-col gap-4 mt-6'>
+        <nav className='flex flex-col gap-4 mt-6 mx-4'>
           {links.map((link) => (
             <SheetClose
               key={link.href}
