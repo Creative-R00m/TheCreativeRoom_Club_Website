@@ -70,7 +70,7 @@
   --accent: #bfe4ff;
   --accent-foreground: #19191b;
   --destructive: #ff4d4d;
-  --border: #757575;
+  --border: #f3f4f6;
   --input: #757575;
   --ring: #4e4e4e;
   --chart-1: oklch(0.87 0 0);
@@ -80,6 +80,8 @@
   --chart-5: oklch(0.269 0 0);
   --radius: 0.625rem;
   --radius-xlg: 1.25rem;
+  --contact-field-background: #f9fafb;
+  --contact-field-radius: 0.75rem;
   --space-section: 7rem;
   --space-section-sm: 5rem;
   --space-section-lg: 10rem;
@@ -142,6 +144,15 @@
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form [data-slot="select-trigger"],
+  .contact-form [data-slot="input"],
+  .contact-form [data-slot="textarea"] {
+    background-color: var(--contact-field-background);
+    border-radius: var(--contact-field-radius);
   }
 }
 

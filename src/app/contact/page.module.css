@@ -61,6 +61,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--color-background);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .faqHeader {
@@ -76,4 +77,34 @@
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .contactHero {
+    aspect-ratio: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .contactImage {
+    display: none;
+  }
+
+  .contact {
+    position: relative;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 3rem 1.25rem;
+    margin-left: 0;
+    top: auto;
+    transform: none;
+  }
+
+  .contactInfo {
+    max-width: 100%;
+  }
+
+  .contactMethods {
+    margin-top: 2.5rem;
+  }
 }

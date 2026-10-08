@@ -60,7 +60,11 @@ export function ContactForm() {
   }, [state]);
 
   return (
-    <form action={formAction} noValidate className='w-full max-w-lg'>
+    <form
+      action={formAction}
+      noValidate
+      className='contact-form mx-auto w-full max-w-lg max-md:rounded-md max-md:border max-md:border-border max-md:bg-white max-md:p-6'
+    >
       <FieldSet>
         <FieldGroup>
           <Field data-invalid={Boolean(state.fieldErrors?.contactType)}>
