@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { MobileNav } from "@/components/ui/mobile-navbar";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -17,13 +18,14 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className='flex items-center justify-between px-[var(--site-margin-x)] py-4'>
+    <nav className='flex items-center justify-between px-4 py-4 md:px-[var(--site-margin-x)]'>
       <div>
         <Link href='/' className=''>
           <Image src='/logo.svg' alt='Logo' width={50} height={50} />
         </Link>
       </div>
-      <div className='flex gap-6'>
+
+      <div className='hidden gap-6 md:flex'>
         {navLinks.map((link) => {
           const isActive = pathname === link.href;
 
@@ -48,10 +50,17 @@ export default function Navbar() {
           );
         })}
       </div>
-      <div>
-        <Button variant='default' size='default' radius='default'>
+
+      <div className='flex items-center gap-4'>
+        <Button
+          variant='default'
+          size='default'
+          radius='default'
+          className='hidden sm:inline-flex'
+        >
           Join Us
         </Button>
+        <MobileNav links={navLinks} />
       </div>
     </nav>
   );
