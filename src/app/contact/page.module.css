@@ -79,6 +79,10 @@
   margin-top: 3rem;
 }
 
+.accordion {
+  width: 50%;
+}
+
 @media (max-width: 768px) {
   .contactHero {
     aspect-ratio: auto;
@@ -106,5 +110,22 @@
 
   .contactMethods {
     margin-top: 2.5rem;
+  }
+
+  .faqSection {
+    margin-inline: calc(-1 * var(--site-margin-x));
+    padding-inline: 1.25rem;
+  }
+
+  .faqHeader {
+    width: 100%;
+  }
+
+  .faq {
+    width: 100%;
+  }
+
+  .accordion {
+    width: 100%;
   }
 }

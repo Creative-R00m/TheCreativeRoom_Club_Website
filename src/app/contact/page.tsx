@@ -110,7 +110,9 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className='mt-[var(--space-section-lg)]'>
+      <div
+        className={`mt-[var(--space-section-lg)] max-md:mt-[4.5rem] ${styles.faqSection}`}
+      >
         <div className={styles.faqHeader}>
           <h4 className='type-eyebrow'>Frequently Asked Questions</h4>
           <h2 className='type-h1'>FAQ</h2>
@@ -118,7 +120,7 @@ export default function Contact() {
         <div className={styles.faq}>
           <Accordion
             defaultValue={initialAccordionValue}
-            className={`max-w-1/2 ${styles.accordion}`}
+            className={styles.accordion}
           >
             {items.map((item) => (
               <AccordionItem key={item.value} value={item.value}>
