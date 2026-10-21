@@ -18,12 +18,12 @@ export default function Footer() {
 
   return (
     <footer
-      className='bg-no-repeat bg-[length:100%_100%]'
+      className='bg-cover bg-top bg-no-repeat'
       style={{ backgroundImage: "url('/images/paper-rip-1.png')" }}
     >
       <div className='px-[var(--site-margin-x)] pt-48 pb-14 flex flex-col gap-12'>
-        <div className='flex flex-row justify-between'>
-          <div className='flex flex-col justify-between max-w-[30ch]'>
+        <div className='flex flex-col items-center justify-center gap-12 md:flex-row md:justify-between md:gap-0'>
+          <div className='flex max-w-[30ch] flex-col items-center justify-between text-center md:items-start md:text-left'>
             <Image
               src='/logo_primary.svg'
               alt='Logo'
@@ -35,8 +35,8 @@ export default function Footer() {
               makers at BCIT.
             </p>
           </div>
-          <div className='flex flex-row gap-14'>
-            <div className='flex flex-col gap-4'>
+          <div className='flex w-full flex-row justify-around text-center md:w-auto md:justify-start md:gap-14'>
+            <div className='flex flex-col items-center gap-4'>
               <h4 className='type-label uppercase mb-2'>Menu</h4>
               {menuLinks.map((link) => {
                 const isActive = pathname === link.href;
@@ -55,7 +55,7 @@ export default function Footer() {
                 );
               })}
             </div>
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col items-center gap-4'>
               <h4 className='type-label uppercase mb-2'>Socials</h4>
               <Link
                 className='type-body text-secondary hover:underline'
@@ -81,11 +81,11 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className='flex flex-row justify-between'>
-          <p className='type-body text-muted'>
+        <div className='flex flex-col-reverse items-center justify-center gap-6 text-center md:flex-row md:justify-between md:gap-0'>
+          <p className='type-body text-muted md:text-left'>
             © 2026 The Creative Room. All rights reserved.
           </p>
-          <div className='flex flex-row gap-6'>
+          <div className='flex flex-row gap-6 text-center'>
             <Link
               className='type-body text-muted hover:underline'
               href='/privacy-policy'
