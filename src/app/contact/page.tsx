@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 const initialAccordionValue = ["item-1"];
 
@@ -78,8 +79,14 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className='type-label-sm uppercase'>Email Us</h3>
-                  <p className='type-body-semi-bold'>
-                    thecreativeroom.damd@gmail.com
+                  <p className='type-body-semi-bold hover:underline'>
+                    <Link
+                      href='mailto:thecreativeroom.damd@gmail.com'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      thecreativeroom.damd@gmail.com
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -100,7 +107,15 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className='type-label-sm uppercase'>Join Discord</h3>
-                  <p className='type-body-semi-bold'>discord.gg/creativeroom</p>
+                  <p className='type-body-semi-bold hover:underline'>
+                    <Link
+                      href='https://discord.gg/8knfryy6wC'
+
+                      rel='noopener noreferrer'
+                    >
+                      discord.gg/creativeroom
+                    </Link>
+                  </p>
                 </div>
               </div>
             </div>
