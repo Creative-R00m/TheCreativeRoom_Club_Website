@@ -98,7 +98,9 @@ export function EventCard({ event, index }: { event: any; index: number }) {
           </div>
         </div>
         {event.shortDescription ? (
-          <p className='type-body'>{event.shortDescription}</p>
+          <p className={styles["event-short-description"]}>
+            {event.shortDescription}
+          </p>
         ) : null}
         <div className={styles["event-register"]}>
           {event.lumaUrl ? (
