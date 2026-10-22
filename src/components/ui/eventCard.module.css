@@ -2,13 +2,14 @@
   display: grid;
   grid-template-columns: minmax(0, 20rem) minmax(0, 2fr);
   gap: 0;
-  width: min(70%, 72rem);
+  /* width: min(80%, 72rem); */
   margin: 0 auto;
   height: fit-content;
 }
 
 .event-image {
   background: #fff;
+  border: 1px solid var(--border);
   border-radius: 20px;
   overflow: hidden;
   display: flex;
@@ -44,6 +45,7 @@
   padding: 1rem;
   padding-left: 3rem;
   background: #fff;
+  border: 1px solid var(--border);
   border-radius: 20px;
   position: relative;
   gap: 12px;
