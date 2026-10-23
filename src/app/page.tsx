@@ -33,7 +33,14 @@ export default async function Home() {
         </div>
 
         {events.length === 0 ? (
-          <p>No upcoming events yet.</p>
+          <EventCard
+            event={{
+              title: "No upcoming events",
+              shortDescription: "Check back later for new events!",
+              coverImage: null,
+            }}
+            index={0}
+          />
         ) : (
           events.map((event, index) => (
             <div key={event._id}>
