@@ -9,23 +9,24 @@ export function EventCard({ event, index }: { event: any; index: number }) {
     <div className={styles["event-card"]}>
       <div className={styles["event-image"]}>
         <div className={styles["event-image-inner"]}>
-          <Image
-            src={
-              event.coverImage
-                ? urlFor(event.coverImage).url()
-                : "/placeholder-image.jpg"
-            }
-            alt={event.title}
-            fill
-            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-            className={styles["event-image-content"]}
-          />
+          {event.coverImage ? (
+            <Image
+              src={urlFor(event.coverImage).url()}
+              alt={event.title}
+              fill
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              className={styles["event-image-content"]}
+            />
+          ) : (
+            <div className={styles["event-image-placeholder"]}></div>
+          )}
         </div>
       </div>
       <div className={styles["event-details"]}>
         <h3 className='type-h2'>{event.title}</h3>
         <div className={styles["event-info"]}>
-          <div className={styles["event-date"]}>
+          {event.startDate ? (
+            <div className={styles["event-date"]}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='14'
@@ -38,9 +39,11 @@ export function EventCard({ event, index }: { event: any; index: number }) {
                 fill='#19191B'
               />
             </svg>
-            {event.startDate ? <p>{event.startDate}</p> : null}
-          </div>
-          <div className={styles["event-time"]}>
+              <p>{event.startDate}</p>
+            </div>
+          ) : null}
+          {event.startTime || event.endTime ? (
+            <div className={styles["event-time"]}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='16'
@@ -55,12 +58,14 @@ export function EventCard({ event, index }: { event: any; index: number }) {
             </svg>
             <div className={styles["event-time-text"]}>
               {event.startTime ? <p>{event.startTime}</p> : null}
-              <p>: </p>
+              {event.startTime && event.endTime ? <p>: </p> : null}
               {event.endTime ? <p>{event.endTime}</p> : null}
               {/* time (am/pm) */}
             </div>
-          </div>
-          <div className={styles["event-location"]}>
+            </div>
+          ) : null}
+          {event.location ? (
+            <div className={styles["event-location"]}>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='12'
@@ -73,10 +78,11 @@ export function EventCard({ event, index }: { event: any; index: number }) {
                 fill='#19191B'
               />
             </svg>
-            {event.location ? <p>{event.location}</p> : null}
-          </div>
-          <div className={styles["event-price"]}>
-            {event.price ? (
+              <p>{event.location}</p>
+            </div>
+          ) : null}
+          {event.price !== null && event.price !== undefined ? (
+            <div className={styles["event-price"]}>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 width='16'
@@ -89,13 +95,9 @@ export function EventCard({ event, index }: { event: any; index: number }) {
                   fill='#19191B'
                 />
               </svg>
-            ) : null}
-            {event.price === 0 ? (
-              <p>Free</p>
-            ) : event.price ? (
-              <p>${event.price}</p>
-            ) : null}
-          </div>
+              <p>{event.price === 0 ? "Free" : `$${event.price}`}</p>
+            </div>
+          ) : null}
         </div>
         {event.shortDescription ? (
           <p className={styles["event-short-description"]}>
